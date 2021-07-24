@@ -37,5 +37,6 @@ app.prepare().then(() => {
 	server.listen(3000, (err) => {
 		if (err) throw err;
 		console.log("Server ready on http://localhost:3000");
+		console.log("Deployed on heroku");
 	});
 });
