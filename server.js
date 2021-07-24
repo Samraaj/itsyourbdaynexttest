@@ -8,6 +8,8 @@ const next = require("next");
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
+const PORT = process.env.PORT || 3000;
+
 app.prepare().then(() => {
 	// Start up express backend server
 	const server = express();
@@ -34,9 +36,9 @@ app.prepare().then(() => {
 	});
 
 	/* eslint-disable no-console */
-	server.listen(3000, (err) => {
+	server.listen(PORT, (err) => {
 		if (err) throw err;
-		console.log("Server ready on http://localhost:3000");
+		console.log("Server ready on port " + PORT);
 		console.log("Deployed on heroku");
 	});
 });
